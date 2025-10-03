@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartChef – Cook with What You Have</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                <span>SmartChef</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cook with What You Have</h1>
+                    <p class="hero-subtitle">Discover delicious recipes using ingredients you already have in your kitchen</p>
+                    
+                    <!-- Search Section -->
+                    <div class="search-container">
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input 
+                                type="text" 
+                                id="ingredientInput" 
+                                placeholder="Enter ingredients (e.g., pasta, eggs)"
+                                autocomplete="off"
+                            >
+                            <button id="searchBtn" class="search-btn">
+                                <i class="fas fa-utensils"></i>
+                                Get Recipes
+                            </button>
+                        </div>
+                        <div class="search-suggestions">
+                            <span class="suggestion-label">Popular ingredients:</span>
+                            <div class="suggestion-tags">
+                                <span class="tag" data-ingredient="chicken">chicken</span>
+                                <span class="tag" data-ingredient="pasta">pasta</span>
+                                <span class="tag" data-ingredient="tomatoes">tomatoes</span>
+                                <span class="tag" data-ingredient="cheese">cheese</span>
+                                <span class="tag" data-ingredient="rice">rice</span>
+                                <span class="tag" data-ingredient="eggs">eggs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-container">
+                <div id="loadingIndicator" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Fetching delicious recipes...</p>
+                </div>
+                
+                <div id="errorMessage" class="error-message hidden">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p></p>
+                </div>
+                
+                <div id="noResults" class="no-results hidden">
+                    <i class="fas fa-search"></i>
+                    <h3>No recipes found</h3>
+                    <p>Try different ingredients or check your spelling</p>
+                    <div class="suggestions">
+                        <p>Popular combinations:</p>
+                        <ul>
+                            <li>chicken + rice</li>
+                            <li>pasta + tomatoes</li>
+                            <li>eggs + cheese</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="resultsGrid" class="results-grid"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About SmartChef</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Reduce Food Waste, Save Time</h3>
+                        <p>SmartChef helps you make the most of what you have in your kitchen. Instead of letting ingredients go to waste or making unnecessary trips to the grocery store, discover amazing recipes that use exactly what you already have.</p>
+                        
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-leaf"></i>
+                                <h4>Reduce Waste</h4>
+                                <p>Use ingredients before they expire and reduce food waste in your home.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <h4>Save Time</h4>
+                                <p>No more wondering what to cook - get instant recipe suggestions based on your ingredients.</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-dollar-sign"></i>
+                                <h4>Save Money</h4>
+                                <p>Make the most of your grocery budget by using what you already have.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Have feedback or suggestions?</h3>
+                        <p>We'd love to hear from you! Whether you have recipe suggestions, found a bug, or just want to say hello, we're here to help.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@smartchef.com</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (333) 216-4832</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>SmartChef</span>
+                </div>
+                <p>&copy; 2025 SmartChef</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Recipe Modal -->
+    <div id="recipeModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
