@@ -97,12 +97,25 @@ function setupNavigation() {
     elements.navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetSection = this.getAttribute('href').substring(1);
-            showSection(targetSection);
+
+            const targetId = this.getAttribute('href').replace('#', '');
+            window.location.hash = targetId; // update the URL hash
+            showSection(targetId);
             updateActiveNavLink(this);
         });
     });
+
+    // Show the correct section on page load (if hash exists)
+    const initialHash = window.location.hash.replace('#', '') || 'home';
+    showSection(initialHash);
+
+    // Update when hash changes (e.g., back/forward buttons)
+    window.addEventListener('hashchange', () => {
+        const currentHash = window.location.hash.replace('#', '') || 'home';
+        showSection(currentHash);
+    });
 }
+
 
 function showSection(sectionId) {
     elements.sections.forEach(section => {
