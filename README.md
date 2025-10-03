@@ -1,3 +1,10 @@
+
+![1](https://github.com/user-attachments/assets/14e44021-e7ed-4bd5-824c-fe61c6606670)
+![2](https://github.com/user-attachments/assets/38618970-ebe8-4f3b-9e52-ac128ea09396)
+![3](https://github.com/user-attachments/assets/2a50f11d-ee9e-466a-aa07-c387e247633c)
+![4](https://github.com/user-attachments/assets/3543fa72-fd5c-4c09-a9a6-566524a00449)
+
+
 # SmartChef - Recipe Suggestion Web App
 
 A modern, appetizing web application that helps users find delicious recipes based on the ingredients they have in their kitchen. Built with HTML, CSS, and Vanilla JavaScript, featuring integration with the Spoonacular API.
